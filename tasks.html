@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindFlow Planner – Your Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo-icon">🧠</div>
+      <span class="logo-text">MindFlow Planner</span>
+    </div>
+    <nav class="navbar-center">
+      <a href="index.html" class="nav-link">Add Task</a>
+      <a href="tasks.html" class="nav-link active">My Tasks</a>
+      <a href="schedule.html" class="nav-link">Plan Schedule</a>
+    </nav>
+    <div class="navbar-right">
+      <div class="user-avatar">
+        <span class="avatar-circle"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-header">
+      <h1 class="page-title">
+        Your Tasks (<span id="taskCount">0</span>)
+      </h1>
+      <p class="page-subtitle">
+        Mark tasks as complete or generate a personalized schedule based on your mood.
+      </p>
+    </section>
+
+    <!-- Filter & Sort Card -->
+    <section class="card filter-card">
+      <div class="filter-row">
+        <div class="filter-section">
+          <h3 class="filter-title">Filter &amp; Sort</h3>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-section">
+          <div class="filter-label">Sort by:</div>
+          <div class="pill-group" id="sortPills">
+            <button class="pill-btn pill-active" data-sort="deadline">Deadline</button>
+            <button class="pill-btn" data-sort="time">Time</button>
+            <button class="pill-btn" data-sort="newest">Newest</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-label">Category:</div>
+          <div class="pill-group" id="categoryPills">
+            <button class="pill-btn pill-active" data-category="All">All</button>
+            <button class="pill-btn" data-category="Deep Work">Deep Work</button>
+            <button class="pill-btn" data-category="Conceptual">Conceptual</button>
+            <button class="pill-btn" data-category="Light Review">Light Review</button>
+            <button class="pill-btn" data-category="Admin/Quick Wins">Admin/Quick Wins</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Card -->
+    <section class="card stats-card">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Total Tasks</div>
+          <div class="stat-value" id="totalTasksValue">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Total Time</div>
+          <div class="stat-value" id="totalTimeValue">0m</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Avg Time/Task</div>
+          <div class="stat-value" id="avgTimeValue">0m</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tasks List -->
+    <section id="tasksContainer" class="tasks-container">
+      <!-- Task cards injected here -->
+    </section>
+
+    <!-- Bottom buttons -->
+    <section class="tasks-footer">
+      <button id="generateSchedule" class="btn-primary footer-left">
+        <span class="btn-icon">✨</span>
+        <span>Generate Personalized Schedule</span>
+      </button>
+      <button id="viewRecommended" class="btn-outline footer-right">
+        <span class="footer-icon">📅</span>
+        <span>View Recommended Schedule</span>
+      </button>
+    </section>
+  </main>
+
+  <script src="tasks.js"></script>
+</body>
+</html>

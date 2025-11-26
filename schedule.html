@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindFlow Planner – Plan Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo-icon">🧠</div>
+      <span class="logo-text">MindFlow Planner</span>
+    </div>
+    <nav class="navbar-center">
+      <a href="index.html" class="nav-link">Add Task</a>
+      <a href="tasks.html" class="nav-link">My Tasks</a>
+      <a href="schedule.html" class="nav-link active">Plan Schedule</a>
+    </nav>
+    <div class="navbar-right">
+      <div class="user-avatar">
+        <span class="avatar-circle"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Centered heading -->
+    <section class="page-header centered">
+      <h1 class="page-title">How are you feeling today?</h1>
+      <p class="page-subtitle">
+        Select your current mood to get personalized task recommendations that match
+        your mental state and energy level.
+      </p>
+    </section>
+
+    <!-- Mood Cards Row -->
+    <section class="mood-grid">
+      <!-- Focused / Analytical -->
+      <article class="mood-card" data-mood-id="focused" data-category="Deep Work">
+        <div class="mood-image focused-img">
+          <div class="mood-badge">
+            <span class="mood-badge-icon">🛡️</span>
+          </div>
+        </div>
+        <div class="mood-body">
+          <h2 class="mood-title">Focused/Analytical</h2>
+          <p class="mood-desc">
+            Ideal for tackling complex problems and deep concentration tasks.
+          </p>
+          <p class="mood-category">
+            Category: <span>Deep Work</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- Creative / Ideating -->
+      <article class="mood-card" data-mood-id="creative" data-category="Conceptual">
+        <div class="mood-image creative-img">
+          <div class="mood-badge">
+            <span class="mood-badge-icon">💡</span>
+          </div>
+        </div>
+        <div class="mood-body">
+          <h2 class="mood-title">Creative/Ideating</h2>
+          <p class="mood-desc">
+            Perfect for brainstorming, designing, and conceptualizing new ideas.
+          </p>
+          <p class="mood-category">
+            Category: <span>Conceptual</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- Scattered / Busy -->
+      <article class="mood-card" data-mood-id="scattered" data-category="Light Review">
+        <div class="mood-image scattered-img">
+          <div class="mood-badge">
+            <span class="mood-badge-icon">⚡</span>
+          </div>
+        </div>
+        <div class="mood-body">
+          <h2 class="mood-title">Scattered/Busy</h2>
+          <p class="mood-desc">
+            Use this mood to efficiently handle quick reviews and minor corrections
+            when your attention is split.
+          </p>
+          <p class="mood-category">
+            Category: <span>Light Review</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- Tired / Low Energy -->
+      <article class="mood-card" data-mood-id="tired" data-category="Admin/Quick Wins">
+        <div class="mood-image tired-img">
+          <div class="mood-badge">
+            <span class="mood-badge-icon">📅</span>
+          </div>
+        </div>
+        <div class="mood-body">
+          <h2 class="mood-title">Tired/Low Energy</h2>
+          <p class="mood-desc">
+            Focus on simple data entry, emails, and repetitive “quick win” tasks
+            that require minimal mental effort.
+          </p>
+          <p class="mood-category">
+            Category: <span>Admin/Quick Wins</span>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Generate Schedule Panel -->
+    <section class="card schedule-panel">
+      <div class="schedule-header">
+        <div class="schedule-header-icon">⚡</div>
+        <div>
+          <h3 class="schedule-title">Generate Your Personalized Schedule</h3>
+          <p class="schedule-subtitle">
+            Based on your selected mood, we'll create a prioritized task list that
+            matches your current mental state and energy level.
+          </p>
+        </div>
+      </div>
+
+      <div id="scheduleAlert" class="schedule-alert warning">
+        <div class="alert-icon">⚠️</div>
+        <p class="alert-text">
+          Please select a mood above to generate your personalized schedule.
+        </p>
+      </div>
+
+      <button id="generateMoodSchedule" class="btn-primary schedule-btn" disabled>
+        <span class="btn-icon">✨</span>
+        <span>Generate Schedule</span>
+      </button>
+
+      <p class="schedule-footer-text">
+        The algorithm will prioritize your most urgent tasks that match your current mood and energy level.
+      </p>
+    </section>
+  </main>
+
+  <script src="schedule.js"></script>
+</body>
+</html>

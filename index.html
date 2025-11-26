@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindFlow Planner – Add Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo-icon">🧠</div>
+      <span class="logo-text">MindFlow Planner</span>
+    </div>
+    <nav class="navbar-center">
+      <a href="index.html" class="nav-link active">Add Task</a>
+      <a href="tasks.html" class="nav-link">My Tasks</a>
+      <a href="schedule.html" class="nav-link">Plan Schedule</a>
+    </nav>
+    <div class="navbar-right">
+      <div class="user-avatar">
+        <span class="avatar-circle"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="page">
+    <section class="page-header">
+      <h1 class="page-title">Add New Task</h1>
+      <p class="page-subtitle">
+        Create a new task and let MindFlow help you schedule it based on your mood and energy level.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2 class="card-title">Task Details</h2>
+        <p class="card-subtitle">Fill in the details below to create a new task</p>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <!-- Task Name -->
+        <div class="form-group">
+          <label for="taskName" class="form-label">Task Name</label>
+          <input
+            id="taskName"
+            name="taskName"
+            type="text"
+            class="form-input"
+            placeholder="e.g., Write Chapter 3 Summary"
+            required
+          />
+          <p class="form-hint">Give your task a clear, descriptive name</p>
+        </div>
+
+        <!-- Deadline -->
+        <div class="form-group">
+          <label for="deadline" class="form-label">Deadline</label>
+          <input
+            id="deadline"
+            name="deadline"
+            type="date"
+            class="form-input"
+            required
+          />
+          <p class="form-hint">When do you need to complete this task?</p>
+        </div>
+
+        <!-- Estimated Time -->
+        <div class="form-group">
+          <label for="estimatedTime" class="form-label">Estimated Time (minutes)</label>
+          <input
+            id="estimatedTime"
+            name="estimatedTime"
+            type="number"
+            min="1"
+            class="form-input"
+            placeholder="e.g., 120"
+            required
+          />
+          <p class="form-hint">How long do you think this task will take?</p>
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+          <span class="form-label">Category</span>
+
+          <div class="category-list">
+            <!-- Deep Work (default selected) -->
+            <label class="category-option selected">
+              <input type="radio" name="category" value="Deep Work" checked />
+              <div class="category-icon">⚙️</div>
+              <div class="category-text">
+                <div class="category-title">Deep Work</div>
+                <div class="category-desc">
+                  Complex problem-solving, coding, research papers.
+                </div>
+              </div>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="Conceptual" />
+              <div class="category-icon">💡</div>
+              <div class="category-text">
+                <div class="category-title">Conceptual</div>
+                <div class="category-desc">
+                  Brainstorming, essays, presentations, outlines.
+                </div>
+              </div>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="Light Review" />
+              <div class="category-icon">📖</div>
+              <div class="category-text">
+                <div class="category-title">Light Review</div>
+                <div class="category-desc">
+                  Flashcards, reading notes, quick checks.
+                </div>
+              </div>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="Admin/Quick Wins" />
+              <div class="category-icon">✅</div>
+              <div class="category-text">
+                <div class="category-title">Admin / Quick Wins</div>
+                <div class="category-desc">
+                  Emails, organizing files, simple to-dos.
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Add Task Button -->
+        <button type="submit" class="btn-primary full-width">
+          + Add Task
+        </button>
+      </form>
+
+      <!-- Bottom actions -->
+      <div class="next-steps">
+        <span class="next-label">Next steps:</span>
+        <div class="next-actions">
+          <button id="openMoodPlanner" class="btn-outline left">
+            <span class="btn-icon">✨</span>
+            <span>Select Mood &amp; Generate Schedule</span>
+          </button>
+          <button id="viewAllTasks" class="btn-outline right">
+            <span class="btn-radio"></span>
+            <span>View All Tasks</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden">Task added successfully!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
